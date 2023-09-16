@@ -1,0 +1,42 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+     $("#bg").change(function(){
+        // console.log($("#bg").val());
+        $("#full").css("background-color",$("#bg").val());
+        $("#myInput").val($("#bg").val());
+    });
+});
+function copyToClipboard(text) {
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = text; //save main text in it
+    sampleTextarea.select(); //select textarea contenrs
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+}
+
+function myFunction(){
+    var copyText = document.getElementById("myInput");
+    copyToClipboard(copyText.value);
+}
+</script>
+<style>
+body {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: red;}
+</style>
+ </head>
+<body id="full">
+    <!-- <form method="post" action=""> -->
+        <label for="bg">Background:</label> 
+        <input type="color" class="theme" id="bg"/> 
+        <!-- The text field -->
+<input type="text" value="HEX" id="myInput">
+<button onclick="myFunction()" >Copy to clipboard</button>
+    <!-- </form> -->
+</body>
+
+</html>

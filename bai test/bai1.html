@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    
+</head>
+<body>
+    
+    <form>
+        a: <input type="number" id="a" value=""/> <br/>
+        b: <input type="number" id="b" value=""/> <br/>
+        <button type="button" onclick="timsochinhphuong()">Hiển thị số chính phương</button>        
+    </form>
+    <h1>Số chính phuương là:</h1>
+    <span id="result"></span> <br/>
+    <script>    
+    function timsochinhphuong() {
+        var a = document.getElementById('a').value;
+        var b = document.getElementById('b').value;
+        var result = '';
+        for (var i = a; i <= b; i++) {
+            if (Math.sqrt(i) % 1 === 0) {
+                result += i + ' ';
+            }
+        }
+            
+        document.getElementById('result').innerHTML = result;
+    }
+    </script>
+    
+</body>
+</html>
